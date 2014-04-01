@@ -74,6 +74,7 @@
     <Compile Include="qsg\remoting\IPaymentProcessor.cs" />
     <Compile Include="qsg\remoting\server\PaymentProcessor.cs" />
     <Compile Include="query\IteratorExample.cs" />
+    <Compile Include="transaction\Lock.cs" />
     <Compile Include="transaction\OptimisticLock.cs" />
     <Compile Include="transaction\Transaction.cs" />
   </ItemGroup>
