@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7CDDF1E8-999E-41B8-B219-490C411A865A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>samples</RootNamespace>
+    <AssemblyName>samples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GigaSpaces.Core">
+      <HintPath>..\..\GigaSpaces\XAP.NET 9.7.0 x64\NET v4.0.30319\Bin\GigaSpaces.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="model\account\model\Account.cs" />
+    <Compile Include="model\account\model\EAccountStatus.cs" />
+    <Compile Include="model\audit\AuditRecord.cs" />
+    <Compile Include="model\audit\AuditRecord1.cs" />
+    <Compile Include="model\contact\Address.cs" />
+    <Compile Include="model\contact\EAddressType.cs" />
+    <Compile Include="model\contact\EContactType.cs" />
+    <Compile Include="model\contact\ECountry.cs" />
+    <Compile Include="model\mergant\model\ECategoryType.cs" />
+    <Compile Include="model\mergant\model\Merchant.cs" />
+    <Compile Include="model\mergant\service\MerchantQueryService.cs" />
+    <Compile Include="model\payment\model\ETransactionStatus.cs" />
+    <Compile Include="model\payment\model\Payment.cs" />
+    <Compile Include="model\user\model\Group.cs" />
+    <Compile Include="model\user\model\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qsg\crud\service\CRUDService.cs" />
+    <Compile Include="qsg\event\AuditListener.cs" />
+    <Compile Include="qsg\event\EventService.cs" />
+    <Compile Include="qsg\event\PaymentListener.cs" />
+    <Compile Include="qsg\event\PaymentQueryListener.cs" />
+    <Compile Include="qsg\executor\AsyncListener.cs" />
+    <Compile Include="qsg\executor\ExecutorService.cs" />
+    <Compile Include="qsg\executor\MerchantByCategoryTask.cs" />
+    <Compile Include="qsg\executor\MerchantUserTask.cs" />
+    <Compile Include="qsg\imdg\IMDGService.cs" />
+    <Compile Include="qsg\query\service\QueryService.cs" />
+    <Compile Include="qsg\remoting\client\RemoteService.cs" />
+    <Compile Include="qsg\remoting\IPaymentProcessor.cs" />
+    <Compile Include="qsg\remoting\server\PaymentProcessor.cs" />
+    <Compile Include="query\IteratorExample.cs" />
+    <Compile Include="transaction\OptimisticLock.cs" />
+    <Compile Include="transaction\Transaction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="qsg\spring\" />
+    <Folder Include="qsg\transaction\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
